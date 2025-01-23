@@ -7,7 +7,7 @@ class TextAnalyzer:
     def __init__(self):
         self.nlp = spacy.load("en_core_web_sm")
         self.entity_counts = defaultdict(int)
-        self.relationships = defaultdict(list)
+        self.relationship = defaultdict(list)
         
     def extract_entities(self, text):
         doc = self.nlp(text)
