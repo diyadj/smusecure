@@ -24,7 +24,7 @@ def analyze_news_articles(df, text_column='clean_text', n_topics=5):
     results = {}
     
     # 1. Topic Modeling with NMF and TF-IDF
-    def get_topics(n_topics=5):
+    def get_topics(df, text_column, n_topics=5):
         tfidf = TfidfVectorizer(max_features=1000, stop_words='english')
         doc_term_matrix = tfidf.fit_transform(df[text_column])
         
@@ -196,7 +196,7 @@ def analyze_news_articles(df, text_column='clean_text', n_topics=5):
     results['similar_articles'] = similar_articles
     
     # Topic modeling
-    topics, topic_distribution = get_topics(n_topics)
+    topics, topic_distribution = get_topics(df, 'clean_text', n_topics)
     results['topics'] = topics
     topic_df = pd.DataFrame(
         topic_distribution,
@@ -327,6 +327,6 @@ def display_analysis(results):
         fig.show()
 
 # Example usage:
-df = pd.read_csv('processed_data.csv')
-results = analyze_news_articles(df)
-display_analysis(results)
+# df = pd.read_csv('processed_data.csv')
+# results = analyze_news_articles(df)
+# display_analysis(results)
