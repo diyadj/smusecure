@@ -1,15 +1,15 @@
 import pandas as pd
 import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF, PCA
 from sklearn.cluster import KMeans
 from sklearn.metrics.pairwise import cosine_similarity
 from textblob import TextBlob
 import spacy
-import seaborn as sns
-import matplotlib.pyplot as plt
+# import seaborn as sns
+# import matplotlib.pyplot as plt
 from collections import Counter, defaultdict
-from datetime import datetime
+# from datetime import datetime
 import plotly.express as px
 import plotly.graph_objects as go
 from gensim.models import Word2Vec
