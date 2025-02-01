@@ -10,7 +10,7 @@ STOPWORDS = set(stopwords.words('english'))
 
 # Read CSV File
 #Frontend can take in filepath, can use import os to change directory
-df = pd.read_csv("data.csv", encoding='ISO-8859-1')
+df = pd.read_csv("../data/raw/data.csv", encoding='ISO-8859-1')
 
 # Remove stopwords
 def remove_stopwords(text):
@@ -61,5 +61,5 @@ df["clean_text"] = df["text_wo_stopfreqrare"].apply(lambda text: remove_urls(tex
 df.drop(["text_wo_stopfreqrare"], axis=1, inplace=True)
 
 # Save the processed_data as a new csv
-df.to_csv("processed_data.csv", index=True)
+df.to_csv("../data/processsed/processed_data.csv", index=True)
 
