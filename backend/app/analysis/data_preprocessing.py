@@ -61,5 +61,5 @@ df["clean_text"] = df["text_wo_stopfreqrare"].apply(lambda text: remove_urls(tex
 df.drop(["text_wo_stopfreqrare"], axis=1, inplace=True)
 
 # Save the processed_data as a new csv
-df.to_csv("../data/processsed/processed_data.csv", index=True)
+df.to_csv("../processed_data.csv", index=True)
 
