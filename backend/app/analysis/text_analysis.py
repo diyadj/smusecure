@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
-from sklearn.decomposition import NMF, LatentDirichletAllocation, PCA
+from sklearn.decomposition import NMF, PCA
 from sklearn.cluster import KMeans
 from sklearn.metrics.pairwise import cosine_similarity
 from textblob import TextBlob
