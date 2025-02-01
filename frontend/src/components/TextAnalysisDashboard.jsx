@@ -13,31 +13,20 @@ const TextAnalysisDashboard = () => {
   const [error, setError] = useState(null);
   const [activeTab, setActiveTab] = useState('topics');
 
-  useEffect(() => {
+  // TextAnalysisDashboard.jsx - update useEffect:
+useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await window.fs.readFile('processed_data.csv');
-        const text = new TextDecoder().decode(response);
-        
-        Papa.parse(text, {
-          header: true,
-          dynamicTyping: true,
-          complete: (results) => {
-            const processedData = processData(results.data);
-            setData(processedData);
-            setLoading(false);
-          },
-          error: (error) => {
-            setError('Error parsing CSV: ' + error.message);
-            setLoading(false);
-          }
-        });
+        const response = await fetch('http://localhost:8000/api/analyze');
+        const data = await response.json();
+        setData(processData(data));
+        setLoading(false);
       } catch (error) {
         setError('Error loading data: ' + error.message);
         setLoading(false);
       }
     };
-
+  
     loadData();
   }, []);
 
