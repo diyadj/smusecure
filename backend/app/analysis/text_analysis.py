@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.decomposition import NMF, PCA
+from sklearn.decomposition import PCA
+from sklearn.decomposition import non_negative_factorization as NMF
 from sklearn.cluster import KMeans
 from sklearn.metrics.pairwise import cosine_similarity
 from textblob import TextBlob
@@ -17,7 +18,7 @@ from gensim.models import Word2Vec
 # Load spacy for NER
 nlp = spacy.load('en_core_web_sm')
 
-def analyze_news_articles(df, text_column='clean_text', n_clusters=5, n_topics=5):
+def analyze_news_articles(df, text_column='clean_text', n_topics=5):
 
     # Comprehensive analysis of news articles including clustering and similarity
     results = {}
