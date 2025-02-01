@@ -6,7 +6,7 @@ from sklearn.decomposition import non_negative_factorization as NMF
 from sklearn.cluster import KMeans
 from sklearn.metrics.pairwise import cosine_similarity
 from textblob import TextBlob
-import spacy
+import spacy as spacy
 # import seaborn as sns
 # import matplotlib.pyplot as plt
 from collections import Counter, defaultdict

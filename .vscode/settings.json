@@ -1,7 +1,7 @@
 {
   "zencoder.enableRepoIndexing": true,
   "python.analysis.extraPaths": [
-    "./backend/analysis",
-    "./backend/analysis"
+    "./app/analysis/",
+    "./backend/app"
   ]
 }
